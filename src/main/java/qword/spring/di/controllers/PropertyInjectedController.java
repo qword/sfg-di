@@ -1,6 +1,7 @@
 package qword.spring.di.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import qword.spring.di.services.GreetingService;
 
@@ -8,6 +9,7 @@ import qword.spring.di.services.GreetingService;
 public class PropertyInjectedController {
 
     @Autowired
+    @Qualifier("propertyGreetingService")
     public GreetingService greetingService;
 
     public String getGreeting() {
